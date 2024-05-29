@@ -4,11 +4,14 @@ const convertToNum = () => {
     return [num1, num2];
 }
 
-const addNums = () => {
-    const [firstNum, secondNum] = convertToNum();
-    let sum = firstNum + secondNum;
+const addNums = (num1, num2) => {
+    if (num1 === undefined || num2 === undefined) {
+        [num1, num2] = convertToNum();
+    }
+    let sum = num1 + num2;
     alert(sum);
     console.log(sum);
+    return sum;
 }
 const multiplyNums = () => {
     const [firstNum, secondNum] = convertToNum();
@@ -26,23 +29,9 @@ const squareNums = () => {
     return [square1, square2]
 }
 const addSquares = () => {
-    // const squares = squareNums();
-    // let sumOfSquares = addNums(squares);
-    // alert(sumOfSquares);
-    // console.log(sumOfSquares);
-
-    let [firstNum, secondNum] = addNums(squareNums());
-    console.log([firstNum, secondNum]);
-
-
-    // const [square1, square2] = squareNums();
-    // let sumSquares = addNums([square1, square2]);
-    // alert(`The sum of the squares is: ${sumSquares}`);
-    // console.log(sumSquares);
-
-    // let sumOfSquares = addNums(square1, square2);
-    // alert(sumOfSquares);
-    // console.log(sumOfSquares);
-    // alert(firstNum + secondNum)
+    let [square1, square2] = squareNums();
+    let sumOfSquares = addNums(square1, square2);
+    alert(`Sum of squares: ${sumOfSquares}`);
+    console.log(sumOfSquares);
 }
 
